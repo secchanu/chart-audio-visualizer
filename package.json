@@ -1,0 +1,47 @@
+{
+	"name": "chart-audio-visualizer",
+	"version": "0.1.0",
+	"private": true,
+	"description": "",
+	"license": "MIT",
+	"author": "secchanu",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc",
+		"postbuild": "ncp public/ dist/",
+		"clean": "del-cli dist",
+		"dev": "ts-node --files src/index.ts",
+		"format": "run-p format:*",
+		"format:prettier": "prettier \"**/*.{ts,tsx,json,html,yml,css,scss,md}\" --check --write",
+		"format:sort-package-json": "sort-package-json",
+		"prepare": "husky install",
+		"start": "node dist/index.js",
+		"test": "run-p test:*",
+		"test:lint": "eslint --ext .ts .",
+		"test:prettier": "prettier \"**/*.{ts,tsx,json,html,yml,css,scss,md}\" --check",
+		"test:types": "tsc --noEmit"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,json,html,yml,css,scss,md}": [
+			"prettier --write"
+		],
+		"package.json": [
+			"sort-package-json"
+		]
+	},
+	"devDependencies": {
+		"@types/chrome": "^0.0.241",
+		"@typescript-eslint/eslint-plugin": "^5.61.0",
+		"@typescript-eslint/parser": "^5.61.0",
+		"del-cli": "^5.0.0",
+		"eslint": "^8.44.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.3",
+		"ncp": "^2.0.0",
+		"npm-run-all2": "^6.0.6",
+		"prettier": "3.0.0",
+		"sort-package-json": "^2.5.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.1.6"
+	}
+}

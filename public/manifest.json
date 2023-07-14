@@ -1,0 +1,17 @@
+{
+	"name": "chart-audio-visualizer",
+	"version": "0.1.0",
+	"manifest_version": 3,
+	"description": "チャートをオーディオビジュアライザーに",
+	"permissions": [],
+	"content_scripts": [
+		{
+			"matches": ["https://www.google.com/*"],
+			"js": ["content.js"]
+		}
+	],
+	"background": {
+		"service_worker": "service_worker.js"
+	},
+	"action": {}
+}

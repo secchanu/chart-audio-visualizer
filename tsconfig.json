@@ -1,0 +1,14 @@
+{
+	"extends": "@tsconfig/node16/tsconfig.json",
+	"compilerOptions": {
+		"outDir": "dist",
+		"rootDir": "src",
+		"baseUrl": "src",
+		"newLine": "lf",
+
+		"lib": ["DOM", "DOM.Iterable"],
+		"typeRoots": ["node_modules/@types"],
+		"module": "CommonJS"
+	},
+	"include": ["src/**/*"]
+}
